@@ -6,13 +6,29 @@ using System.Threading.Tasks;
 
 namespace TRNext.Classes
 {
-    class Manager: Person
+    /** Manager
+    * Class that describes a manager,
+    * it has the ability to get dressed (choose the amount of buttons on his coat)
+    */
+    class Manager : Person
     {
+        #region Properties
+        private int coat_buttons;
+        #endregion
+
         /** Constructor
          * <summary Creates the class />
          */
         public Manager(String name, int age = -1): base(name, age)
         {
+            this.coat_buttons = 0; // The manager begins without a coat
         }
+
+        #region Parameter encapsulators
+        public int CoatButtons { 
+            get { return this.coat_buttons; } 
+            set { this.coat_buttons = value; }
+        }
+        #endregion
     }
 }
