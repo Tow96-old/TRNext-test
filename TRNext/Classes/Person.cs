@@ -13,26 +13,25 @@ namespace TRNext.Classes
     public class Person
     {
         #region Properties
-        private int age;
-        private int height;
-        private string name;
+        protected int age;
+        protected string name;
         #endregion
 
         /** Constructor
          * <summary Creates the class />
          * <param name="age" age of the person />
-         * <param name="height" height of the person in cm />
          * <param name="name" Name of the person />
          */
-        public Person(String name, int age = -1, int height = -1)
+        public Person(String name, int age = -1)
         {
             this.age = age;
-            this.height = height;
             this.name = name;
         }
 
         #region Parameter encapsulators
+        // Name and age can only get as they are intrinsic to the person
         public string Name { get { return this.name; } }
+        public int Age { get { return this.age; } }
         #endregion
 
         #region Functions

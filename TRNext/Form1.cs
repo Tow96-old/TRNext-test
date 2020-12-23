@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TRNext.Classes;
 
 namespace TRNext
 {
@@ -17,9 +11,14 @@ namespace TRNext
             InitializeComponent();
         }
 
+        #region Properties
+        private Manager manager;
+        #endregion
+
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello there");
+            manager = new Manager("pepe", 45);
+            MessageBox.Show(manager.Name);
         }
     }
 }
