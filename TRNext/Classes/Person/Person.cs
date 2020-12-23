@@ -17,6 +17,7 @@ namespace TRNext.Classes
         protected Stat strength;
         protected Stat intelligence;
         protected Stat charisma;
+        protected Clothing clothing = new Coat(-1);
         #endregion
 
         /** Constructor
