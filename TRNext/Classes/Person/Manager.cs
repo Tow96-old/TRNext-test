@@ -14,6 +14,7 @@ namespace TRNext.Classes
     {
         #region Properties
         private int coat_buttons;
+        protected Clothing clothing = new Coat(-1);
         #endregion
 
         /** Constructor
@@ -28,6 +29,13 @@ namespace TRNext.Classes
         public int CoatButtons { 
             get { return this.coat_buttons; } 
             set { this.coat_buttons = value; }
+        }
+        public Clothing Clothing { get { return this.clothing; } }
+        #endregion
+
+        #region Functions
+        public void DressUp(int buttons) {
+            this.clothing = new Coat(buttons);
         }
         #endregion
     }

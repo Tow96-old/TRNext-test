@@ -34,6 +34,7 @@ namespace TRNext.Classes
             this.strength = new Stat("Strength", rand.Next(5));
             this.intelligence = new Stat("Intelligence", rand.Next(5));
             this.charisma = new Stat("Charisma", rand.Next(5));
+
         }
 
         #region Parameter encapsulators
@@ -43,6 +44,7 @@ namespace TRNext.Classes
         public int Strength { get { return this.strength.Value; } }
         public int Intelligence {  get { return this.intelligence.Value; } }
         public int Charisma {  get { return this.charisma.Value; } }
+
         #endregion
 
         #region Functions
