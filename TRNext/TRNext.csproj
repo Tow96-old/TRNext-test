@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Business\Business.cs" />
+    <Compile Include="Classes\Names.cs" />
     <Compile Include="Classes\Clothing\Clothing.cs" />
     <Compile Include="Classes\Clothing\Coat.cs" />
     <Compile Include="Classes\Person\Employee.cs" />

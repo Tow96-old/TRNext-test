@@ -21,15 +21,18 @@ namespace TRNext.Classes
         public Manager(String name, int age, int payroll): base(name, age, payroll)
         {
         }
+        public Manager(Person input, int payroll):base(input.Name, input.Age, payroll) {
+            this.strength = input.Strength;
+            this.intelligence = input.Intelligence;
+            this.charisma = input.Charisma;
+            this.clothing = input.Clothing;
+        }
 
         #region Parameter encapsulators
-        public Clothing Clothing { get { return this.clothing; } }
         #endregion
 
         #region Functions
-        public void DressUp(int buttons) {
-            this.clothing = new Coat(buttons);
-        }
+
         #endregion
     }
 }

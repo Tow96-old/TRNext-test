@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TRNext.Classes.Business
+namespace TRNext.Classes
 {
     class Business
     {
@@ -13,15 +13,23 @@ namespace TRNext.Classes.Business
         private List<Employee> engineers = new List<Employee>();
         private List<Employee> operators = new List<Employee>();
 
+        // Default payrolls
+        private int managerPayroll;
+        private int engineerPayroll;
+        private int operatorPayroll;
+
         // How many operators there will be
         private int maxEngineers;
         private int maxOperators;
         #endregion
 
-        public Business(int maxEngineers = 10, int maxOperators = 20)
+        public Business(int maxEngineers = 10, int maxOperators = 20, int managerPayroll = 100, int engineerPayroll = 75, int operatorPayroll = 50)
         {
             this.maxEngineers = maxEngineers;
             this.maxOperators = maxOperators;
+            this.managerPayroll = managerPayroll;
+            this.engineerPayroll = engineerPayroll;
+            this.operatorPayroll = operatorPayroll;
         }
 
         #region encapsulated Parameters
@@ -31,19 +39,21 @@ namespace TRNext.Classes.Business
         #endregion
 
         #region Functions
-        public void addManager(Manager manager) { this.manager = manager; }
+        public void addManager(Person manager) { 
+            this.manager = new Manager(manager, managerPayroll); 
+        }
 
-        public Employee hireEngineer(Employee engineer)
+        public Person hireEngineer(Person engineer)
         {
             if (this.engineers.Count >= maxEngineers) { return null; }
-            this.engineers.Add(engineer);
+            this.engineers.Add(new Employee(engineer, engineerPayroll));
             return engineer;
         }
 
-        public Employee hireOperator(Employee operat)
+        public Person hireOperator(Person operat)
         {
             if (this.operators.Count >= maxOperators) { return null; }
-            this.operators.Add(operat);
+            this.operators.Add(new Employee(operat, operatorPayroll));
             return operat;
         }
 

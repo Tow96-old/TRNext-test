@@ -42,13 +42,18 @@ namespace TRNext.Classes
         // Name and age can only get as they are intrinsic to the person
         public string Name { get { return this.name; } }
         public int Age { get { return this.age; } }
-        public int Strength { get { return this.strength.Value; } }
-        public int Intelligence {  get { return this.intelligence.Value; } }
-        public int Charisma {  get { return this.charisma.Value; } }
+        public Stat Strength { get { return this.strength; } }
+        public Stat Intelligence {  get { return this.intelligence; } }
+        public Stat Charisma {  get { return this.charisma; } }
 
+        public Clothing Clothing {  get { return this.clothing; } }
         #endregion
 
         #region Functions
+        public void DressUp(int buttons)
+        {
+            this.clothing = new Coat(buttons);
+        }
         #endregion
 
     }
